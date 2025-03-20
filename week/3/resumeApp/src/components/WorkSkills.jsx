@@ -1,17 +1,11 @@
-export const WorkSkills = () => {
+export const WorkSkills = ({ content = [] }) => {
   return (
     <div>
       <h1>업무 스킬</h1>
       <ul>
-        <li>TypeScript</li>
-        <li>JavaScript</li>
-        <li>Python</li>
-        <li>Kotlin</li>
-        <li>PosgreSQL</li>
-        <li>Docker</li>
-        <li>AWS</li>
-        <li>Shell Script</li>
-        <li>Ubuntu</li>
+        {content.length > 1
+          ? content.map((v, i) => <li key={i}>{v}</li>)
+          : "없음"}
       </ul>
     </div>
   );

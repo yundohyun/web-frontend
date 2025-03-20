@@ -1,10 +1,11 @@
-export const Career = () => {
+export const Career = ({ title = "", content = [] }) => {
   return (
     <div>
-      <h1>학력 사항</h1>
+      <h1>{title}</h1>
       <ul>
-        <li>2021. 03. ~ 2024. 02. : 선린인터넷고등학교</li>
-        <li>2024. 03 ~ : 대학교 컴퓨터소프트웨어공학과</li>
+        {content.length > 1
+          ? content.map((v, i) => <li key={i}>{v}</li>)
+          : "없음"}
       </ul>
     </div>
   );
